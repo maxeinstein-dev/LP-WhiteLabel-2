@@ -22,6 +22,8 @@ jobs:
       FTP_SERVER: ${{ secrets.FTP_SERVER }}
       FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    outputs:
+      ftp_enabled: ${{ steps.detect_ftp.outputs.ftp_enabled }}
 
     steps:
       # 1. Checkout do código
@@ -58,15 +60,28 @@ jobs:
           echo "✓ Build successful - dist/ directory exists"
           ls -la dist/
 
-      # 6. Upload artifact para GitHub Pages
+      # 6. Detectar se FTP está habilitado via secrets
+      - name: 🔎 Detect FTP configuration
+        id: detect_ftp
+        run: |
+          if [ -n "$FTP_SERVER" ] && [ -n "$FTP_USERNAME" ] && [ -n "$FTP_PASSWORD" ]; then
+            echo "ftp_enabled=true" >> "$GITHUB_OUTPUT"
+            echo "FTP secrets encontrados. Deploy será feito via FTP." 
+          else
+            echo "ftp_enabled=false" >> "$GITHUB_OUTPUT"
+            echo "FTP secrets não encontrados. Deploy seguirá via GitHub Pages." 
+          fi
+
+      # 7. Upload artifact para GitHub Pages (apenas se FTP NÃO estiver habilitado)
       - name: 📤 Upload artifact (GitHub Pages)
+        if: ${{ steps.detect_ftp.outputs.ftp_enabled == 'false' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      # 7. Deploy opcional para FTP (só se secrets existirem)
-      - name: 🚀 Deploy to FTP Server (conditional)
-        if: ${{ env.FTP_SERVER != '' && env.FTP_USERNAME != '' && env.FTP_PASSWORD != '' }}
+      # 8. Deploy para FTP (apenas se FTP estiver habilitado)
+      - name: 🚀 Deploy to FTP Server
+        if: ${{ steps.detect_ftp.outputs.ftp_enabled == 'true' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ env.FTP_SERVER }}
@@ -81,7 +96,7 @@ jobs:
             **/node_modules/**
             **/.DS_Store
 
-      # 8. Notificação de sucesso
+      # 9. Notificação de sucesso
       - name: 🎉 Build Complete
         run: |
           echo "================================================"
@@ -91,6 +106,7 @@ jobs:
   deploy-pages:
     needs: build-and-deploy
     runs-on: ubuntu-latest
+    if: ${{ needs.build-and-deploy.outputs.ftp_enabled == 'false' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
