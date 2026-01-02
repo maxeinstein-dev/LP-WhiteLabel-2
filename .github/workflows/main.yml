@@ -1,71 +1,99 @@
-name: Build and Deploy to FTP
+name: Build and Deploy
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 on:
-    push:
-        branches:
-            - main
-    workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            # 1. Checkout do código
-            - name: 📥 Checkout Repository
-              uses: actions/checkout@v4
+    steps:
+      # 1. Checkout do código
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
 
-            # 2. Setup Node.js
-            - name: 🟢 Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "20"
-                  cache: "npm"
+      # 2. Setup Node.js
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
 
-            # 3. Instalar dependências (se houver)
-            - name: 📦 Install Dependencies
-              run: |
-                  if [ -f package.json ]; then
-                    npm ci
-                  else
-                    echo "No package.json found, skipping npm install"
-                  fi
+      # 3. Instalar dependências (se houver)
+      - name: 📦 Install Dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found, skipping npm install"
+          fi
 
-            # 4. Executar o build
-            - name: 🔨 Build Static Site
-              run: node builder.js
+      # 4. Executar o build
+      - name: 🔨 Build Static Site
+        run: node builder.js
 
-            # 5. Verificar se dist/ foi criado
-            - name: ✅ Verify Build Output
-              run: |
-                  if [ ! -d "dist" ]; then
-                    echo "❌ Error: dist/ directory not found!"
-                    exit 1
-                  fi
-                  echo "✓ Build successful - dist/ directory exists"
-                  ls -la dist/
+      # 5. Verificar se dist/ foi criado
+      - name: ✅ Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "❌ Error: dist/ directory not found!"
+            exit 1
+          fi
+          echo "✓ Build successful - dist/ directory exists"
+          ls -la dist/
 
-            # 6. Deploy para FTP
-            - name: 🚀 Deploy to FTP Server
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-              with:
-                  server: ${{ secrets.FTP_SERVER }}
-                  username: ${{ secrets.FTP_USERNAME }}
-                  password: ${{ secrets.FTP_PASSWORD }}
-                  local-dir: ./dist/
-                  server-dir: ./public_html/
-                  dangerous-clean-slate: false
-                  exclude: |
-                      **/.git*
-                      **/.git*/**
-                      **/node_modules/**
-                      **/.DS_Store
+      # 6. Upload artifact para GitHub Pages
+      - name: 📤 Upload artifact (GitHub Pages)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
-            # 7. Notificação de sucesso
-            - name: 🎉 Deployment Complete
-              run: |
-                  echo "================================================"
-                  echo "✨ Deployment completed successfully!"
-                  echo "================================================"
-                  echo "🌐 Your landing page is now live!"
-                  echo "================================================"
+      # 7. Deploy opcional para FTP (só se secrets existirem)
+      - name: 🚀 Deploy to FTP Server (conditional)
+        if: ${{ secrets.FTP_SERVER && secrets.FTP_USERNAME && secrets.FTP_PASSWORD }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+
+      # 8. Notificação de sucesso
+      - name: 🎉 Build Complete
+        run: |
+          echo "================================================"
+          echo "✨ Build completed successfully!"
+          echo "================================================"
+
+  deploy-pages:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
