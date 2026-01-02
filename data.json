@@ -1,0 +1,177 @@
+{
+  "seo": {
+    "title": "Transforme Seu Negócio Digital | Soluções White Label",
+    "description": "Plataforma completa para criar landing pages de alta conversão com visual premium, SEO impecável e conteúdo totalmente personalizável.",
+    "keywords": "landing page, white label, conversão, marketing digital, vendas online, geração de leads, páginas responsivas",
+    "ogImage": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+    "favicon": "https://fav.farm/%F0%9F%9A%80",
+    "author": "Sua Empresa",
+    "language": "pt-BR"
+  },
+  "theme": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#ec4899",
+    "accentColor": "#14b8a6",
+    "darkColor": "#1e293b",
+    "lightColor": "#f8fafc",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",
+    "fontFamily": "'Inter', sans-serif"
+  },
+  "sectionsOrder": ["hero", "features", "pricing", "cta", "contact"],
+  "content": {
+    "hero": {
+      "title": "Crie Landing Pages de <span class='text-gradient'>Alta Conversão</span>",
+      "subtitle": "Solução white label completa para agências e empresas que desejam resultados comprovados",
+      "description": "Aumente suas vendas em até 300% com páginas otimizadas para SEO, responsivas e prontas para capturar leads qualificados.",
+      "ctaPrimary": {
+        "text": "Começar Agora",
+        "link": "#contact"
+      },
+      "ctaSecondary": {
+        "text": "Ver Demonstração",
+        "link": "#features"
+      },
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+      "badges": [
+        "✓ Setup em 5 minutos",
+        "✓ 100% Personalizável",
+        "✓ Suporte 24/7"
+      ]
+    },
+    "features": {
+      "title": "Recursos que <span class='text-gradient'>Fazem a Diferença</span>",
+      "subtitle": "Tudo que você precisa para criar páginas que convertem",
+      "items": [
+        {
+          "icon": "⚡",
+          "title": "Performance Extrema",
+          "description": "Páginas otimizadas que carregam em menos de 1 segundo, garantindo a melhor experiência para seus visitantes."
+        },
+        {
+          "icon": "🎨",
+          "title": "100% Personalizável",
+          "description": "Customize cores, fontes e conteúdo via JSON. Crie uma identidade única sem tocar no código."
+        },
+        {
+          "icon": "📱",
+          "title": "Mobile First",
+          "description": "Design responsivo que funciona perfeitamente em todos os dispositivos, de smartphones a desktops."
+        },
+        {
+          "icon": "🔍",
+          "title": "SEO Otimizado",
+          "description": "Estrutura semântica, meta tags e Open Graph configurados para máxima visibilidade nos buscadores."
+        },
+        {
+          "icon": "🚀",
+          "title": "Deploy Automático",
+          "description": "Integração com GitHub Actions para publicação instantânea via FTP a cada atualização."
+        },
+        {
+          "icon": "♿",
+          "title": "Acessibilidade",
+          "description": "Código compatível com WCAG 2.1, garantindo que todos possam acessar seu conteúdo."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Planos para <span class='text-gradient'>Cada Necessidade</span>",
+      "subtitle": "Escolha o plano ideal para o seu negócio",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "R$ 97",
+          "period": "/mês",
+          "description": "Perfeito para começar",
+          "features": [
+            "1 Landing Page",
+            "Customização básica",
+            "Hospedagem incluída",
+            "Suporte via email",
+            "SSL Grátis"
+          ],
+          "highlighted": false,
+          "ctaText": "Começar Agora",
+          "ctaLink": "#contact"
+        },
+        {
+          "name": "Professional",
+          "price": "R$ 297",
+          "period": "/mês",
+          "description": "Mais recursos e poder",
+          "features": [
+            "5 Landing Pages",
+            "Customização avançada",
+            "Domínio personalizado",
+            "Suporte prioritário",
+            "Analytics integrado",
+            "A/B Testing"
+          ],
+          "highlighted": true,
+          "ctaText": "Escolher Plano",
+          "ctaLink": "#contact"
+        },
+        {
+          "name": "Enterprise",
+          "price": "R$ 797",
+          "period": "/mês",
+          "description": "Solução completa",
+          "features": [
+            "Landing Pages ilimitadas",
+            "White Label completo",
+            "API de integração",
+            "Suporte dedicado 24/7",
+            "Consultoria mensal",
+            "Recursos personalizados"
+          ],
+          "highlighted": false,
+          "ctaText": "Falar com Vendas",
+          "ctaLink": "#contact"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Pronto para <span class='text-gradient'>Aumentar suas Conversões?</span>",
+      "description": "Junte-se a mais de 500 empresas que já transformaram seus resultados com nossa solução.",
+      "buttonText": "Começar Gratuitamente",
+      "buttonLink": "#contact",
+      "note": "Sem cartão de crédito • Cancelamento a qualquer momento"
+    },
+    "contact": {
+      "title": "Entre em <span class='text-gradient'>Contato</span>",
+      "subtitle": "Estamos prontos para ajudar você a crescer",
+      "form": {
+        "namePlaceholder": "Seu nome completo",
+        "emailPlaceholder": "seu@email.com",
+        "phonePlaceholder": "(00) 00000-0000",
+        "messagePlaceholder": "Como podemos ajudar você?",
+        "submitButton": "Enviar Mensagem",
+        "successMessage": "Mensagem enviada com sucesso! Retornaremos em breve.",
+        "errorMessage": "Erro ao enviar. Tente novamente."
+      },
+      "info": {
+        "email": "contato@suaempresa.com",
+        "phone": "+55 (11) 99999-9999",
+        "address": "São Paulo, SP - Brasil"
+      }
+    },
+    "footer": {
+      "text": "© 2026 Sua Empresa. Todos os direitos reservados.",
+      "links": [
+        {
+          "text": "Política de Privacidade",
+          "url": "/privacidade"
+        },
+        {
+          "text": "Termos de Uso",
+          "url": "/termos"
+        }
+      ]
+    }
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "facebookPixelId": "",
+    "hotjarId": ""
+  }
+}

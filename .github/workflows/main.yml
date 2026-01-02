@@ -1,0 +1,71 @@
+name: Build and Deploy to FTP
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            # 1. Checkout do código
+            - name: 📥 Checkout Repository
+              uses: actions/checkout@v4
+
+            # 2. Setup Node.js
+            - name: 🟢 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            # 3. Instalar dependências (se houver)
+            - name: 📦 Install Dependencies
+              run: |
+                  if [ -f package.json ]; then
+                    npm ci
+                  else
+                    echo "No package.json found, skipping npm install"
+                  fi
+
+            # 4. Executar o build
+            - name: 🔨 Build Static Site
+              run: node builder.js
+
+            # 5. Verificar se dist/ foi criado
+            - name: ✅ Verify Build Output
+              run: |
+                  if [ ! -d "dist" ]; then
+                    echo "❌ Error: dist/ directory not found!"
+                    exit 1
+                  fi
+                  echo "✓ Build successful - dist/ directory exists"
+                  ls -la dist/
+
+            # 6. Deploy para FTP
+            - name: 🚀 Deploy to FTP Server
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              with:
+                  server: ${{ secrets.FTP_SERVER }}
+                  username: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  local-dir: ./dist/
+                  server-dir: ./public_html/
+                  dangerous-clean-slate: false
+                  exclude: |
+                      **/.git*
+                      **/.git*/**
+                      **/node_modules/**
+                      **/.DS_Store
+
+            # 7. Notificação de sucesso
+            - name: 🎉 Deployment Complete
+              run: |
+                  echo "================================================"
+                  echo "✨ Deployment completed successfully!"
+                  echo "================================================"
+                  echo "🌐 Your landing page is now live!"
+                  echo "================================================"

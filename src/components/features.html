@@ -1,0 +1,129 @@
+<!-- Features Section -->
+<section class="features-section py-5 bg-light" id="features">
+  <div class="container py-5">
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="display-4 fw-bold mb-3" data-aos="fade-up">
+          {{FEATURES_TITLE}}
+        </h2>
+        <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
+          {{FEATURES_SUBTITLE}}
+        </p>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="row g-4">
+      <!-- Feature Item 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">⚡</div>
+          <h3 class="h5 fw-bold mb-3">Performance Extrema</h3>
+          <p class="text-muted mb-0">
+            Páginas otimizadas que carregam em menos de 1 segundo, garantindo a
+            melhor experiência para seus visitantes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Item 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">🎨</div>
+          <h3 class="h5 fw-bold mb-3">100% Personalizável</h3>
+          <p class="text-muted mb-0">
+            Customize cores, fontes e conteúdo via JSON. Crie uma identidade
+            única sem tocar no código.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Item 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">📱</div>
+          <h3 class="h5 fw-bold mb-3">Mobile First</h3>
+          <p class="text-muted mb-0">
+            Design responsivo que funciona perfeitamente em todos os
+            dispositivos, de smartphones a desktops.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Item 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">🔍</div>
+          <h3 class="h5 fw-bold mb-3">SEO Otimizado</h3>
+          <p class="text-muted mb-0">
+            Estrutura semântica, meta tags e Open Graph configurados para máxima
+            visibilidade nos buscadores.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Item 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">🚀</div>
+          <h3 class="h5 fw-bold mb-3">Deploy Automático</h3>
+          <p class="text-muted mb-0">
+            Integração com GitHub Actions para publicação instantânea via FTP a
+            cada atualização.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Item 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div
+          class="feature-card h-100 p-4 bg-white rounded-4 shadow-sm hover-lift"
+        >
+          <div class="feature-icon mb-3 fs-1">♿</div>
+          <h3 class="h5 fw-bold mb-3">Acessibilidade</h3>
+          <p class="text-muted mb-0">
+            Código compatível com WCAG 2.1, garantindo que todos possam acessar
+            seu conteúdo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border-radius: 16px;
+    color: white;
+  }
+</style>

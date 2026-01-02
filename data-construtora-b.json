@@ -1,0 +1,82 @@
+{
+  "seo": {
+    "title": "Atlas Construtora | Projetos que valorizam sua vida",
+    "description": "Incorporadora focada em condominios residenciais sustentaveis, com tecnologia e conforto em cada detalhe.",
+    "keywords": "construtora, incorporadora, condominio, sustentabilidade, alto padrao",
+    "ogImage": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+    "favicon": "https://fav.farm/%F0%9F%8C%8F",
+    "author": "Atlas Construtora",
+    "language": "pt-BR"
+  },
+  "theme": {
+    "primaryColor": "#1d4ed8",
+    "secondaryColor": "#0ea5e9",
+    "accentColor": "#f97316",
+    "darkColor": "#0b1220",
+    "lightColor": "#f1f5f9",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap",
+    "fontFamily": "'Work Sans', sans-serif"
+  },
+  "sectionsOrder": ["hero2", "features2", "pricing2", "cta2", "contact2"],
+  "content": {
+    "hero": {
+      "title": "Sua casa, com engenharia de alto padrao",
+      "subtitle": "Condominios planejados com eficiencia energetica e lazer completo",
+      "description": "Cada projeto recebe acompanhamento tecnico, cronograma transparente e garantia estendida.",
+      "ctaPrimary": {
+        "text": "Agendar visita ao decorado",
+        "link": "#contact"
+      },
+      "ctaSecondary": { "text": "Baixar memorial", "link": "#features" },
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
+      "badges": ["Energia limpa", "Entrega garantida", "Assistencia pos-obra"]
+    },
+    "features": {
+      "title": "Tecnologia e conforto em cada torre",
+      "subtitle": "Paineis solares, reuso de agua, automacao e paisagismo autoral",
+      "items": []
+    },
+    "pricing": {
+      "title": "Planos flexiveis para investir",
+      "subtitle": "Modelos de pagamento e gestao que cabem no seu cronograma",
+      "plans": []
+    },
+    "cta": {
+      "title": "Vamos planejar seu novo endereco?",
+      "description": "Receba um estudo financeiro e cronograma customizado para sua unidade ou empreendimento.",
+      "buttonText": "Falar com especialista",
+      "buttonLink": "#contact",
+      "note": "Atendimento em ate 24h"
+    },
+    "contact": {
+      "title": "Contato Atlas",
+      "subtitle": "Equipe dedicada para clientes e investidores",
+      "form": {
+        "namePlaceholder": "Seu nome completo",
+        "emailPlaceholder": "seu@email.com",
+        "phonePlaceholder": "(00) 00000-0000",
+        "messagePlaceholder": "Como podemos ajudar?",
+        "submitButton": "Enviar mensagem",
+        "successMessage": "Mensagem enviada com sucesso!",
+        "errorMessage": "Erro ao enviar. Tente novamente."
+      },
+      "info": {
+        "email": "relacionamento@atlasconstrutora.com",
+        "phone": "+55 (31) 3555-8000",
+        "address": "Av. Raja Gabaglia, 500 - Belo Horizonte, MG"
+      }
+    },
+    "footer": {
+      "text": "© 2026 Atlas Construtora. Todos os direitos reservados.",
+      "links": [
+        { "text": "Politica de Privacidade", "url": "/privacidade" },
+        { "text": "Termos de Uso", "url": "/termos" }
+      ]
+    }
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "facebookPixelId": "",
+    "hotjarId": ""
+  }
+}

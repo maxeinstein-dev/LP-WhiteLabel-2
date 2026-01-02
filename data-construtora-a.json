@@ -1,0 +1,79 @@
+{
+  "seo": {
+    "title": "Horizonte Engenharia | Construindo o futuro com qualidade",
+    "description": "Construtora especializada em empreendimentos residenciais e corporativos com entregas no prazo e alto padrao de acabamento.",
+    "keywords": "construtora, incorporadora, apartamentos, obras, empreendimentos, alto padrao",
+    "ogImage": "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1600&q=80",
+    "favicon": "https://fav.farm/%F0%9F%8F%A1",
+    "author": "Horizonte Engenharia",
+    "language": "pt-BR"
+  },
+  "theme": {
+    "primaryColor": "#0f766e",
+    "secondaryColor": "#0891b2",
+    "accentColor": "#f59e0b",
+    "darkColor": "#0b1726",
+    "lightColor": "#f8fafc",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap",
+    "fontFamily": "'Manrope', sans-serif"
+  },
+  "sectionsOrder": ["hero2", "features2", "pricing2", "cta2", "contact2"],
+  "content": {
+    "hero": {
+      "title": "Construcao segura para o seu proximo endereco",
+      "subtitle": "Empreendimentos residenciais e corporativos com gestao de obra transparente",
+      "description": "Projetos assinados por especialistas, materiais certificados e equipes em campo dedicadas a cada fase da obra.",
+      "ctaPrimary": { "text": "Agendar visita", "link": "#contact" },
+      "ctaSecondary": { "text": "Ver portifolio", "link": "#features" },
+      "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
+      "badges": ["Prazo garantido", "Equipe certificada", "Gestao digital"]
+    },
+    "features": {
+      "title": "Diferenciais que entregam tranquilidade",
+      "subtitle": "Processos, tecnologia e pessoas alinhadas para executar com excelencia",
+      "items": []
+    },
+    "pricing": {
+      "title": "Planos de gestao para cada projeto",
+      "subtitle": "Escolha o nivel de suporte ideal para sua obra",
+      "plans": []
+    },
+    "cta": {
+      "title": "Pronto para tirar seu projeto do papel?",
+      "description": "Fale com nosso time e receba um estudo personalizado para sua obra.",
+      "buttonText": "Falar com especialista",
+      "buttonLink": "#contact",
+      "note": "Resposta em ate 1 dia util"
+    },
+    "contact": {
+      "title": "Converse com a Horizonte",
+      "subtitle": "Atendimento dedicado para clientes, investidores e parceiros",
+      "form": {
+        "namePlaceholder": "Seu nome completo",
+        "emailPlaceholder": "seu@email.com",
+        "phonePlaceholder": "(00) 00000-0000",
+        "messagePlaceholder": "Conte sobre seu projeto",
+        "submitButton": "Enviar mensagem",
+        "successMessage": "Mensagem enviada com sucesso! Retornaremos em breve.",
+        "errorMessage": "Erro ao enviar. Tente novamente."
+      },
+      "info": {
+        "email": "contato@horizonte.eng.br",
+        "phone": "+55 (11) 4000-9000",
+        "address": "Av. Paulista, 1000 - Sao Paulo, SP"
+      }
+    },
+    "footer": {
+      "text": "© 2026 Horizonte Engenharia. Todos os direitos reservados.",
+      "links": [
+        { "text": "Politica de Privacidade", "url": "/privacidade" },
+        { "text": "Termos de Uso", "url": "/termos" }
+      ]
+    }
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "facebookPixelId": "",
+    "hotjarId": ""
+  }
+}

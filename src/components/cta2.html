@@ -1,0 +1,65 @@
+<!-- CTA Section v2 -->
+<section class="cta-alt py-5" id="cta">
+  <div class="container py-4">
+    <div
+      class="cta-card shadow-lg rounded-4 position-relative overflow-hidden"
+      data-aos="zoom-in"
+    >
+      <div class="cta-overlay"></div>
+      <div
+        class="row align-items-center g-4 position-relative"
+        style="z-index: 2"
+      >
+        <div class="col-lg-8 text-white">
+          <p class="text-uppercase fw-semibold mb-2 opacity-75">
+            Pronto para comecar?
+          </p>
+          <h2 class="display-5 fw-bold mb-3">{{CTA_TITLE}}</h2>
+          <p class="lead opacity-90 mb-0">{{CTA_DESCRIPTION}}</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a
+            href="{{CTA_BUTTONLINK}}"
+            class="btn btn-light btn-lg px-4 py-3 mb-2"
+            >{{CTA_BUTTONTEXT}}</a
+          >
+          <p class="text-white-50 small mb-0">{{CTA_NOTE}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-alt {
+    background: #0f172a;
+  }
+  .cta-card {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    padding: 48px;
+  }
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 255, 255, 0.1),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 50%,
+        rgba(255, 255, 255, 0.12),
+        transparent 40%
+      );
+    pointer-events: none;
+  }
+  @media (max-width: 767px) {
+    .cta-card {
+      padding: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,120 @@
+<!-- Pricing Section v2 -->
+<section class="pricing-alt py-5" id="pricing">
+  <div class="container py-5">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="text-uppercase fw-semibold text-secondary mb-2">Planos</p>
+        <h2 class="display-5 fw-bold mb-3">{{PRICING_TITLE}}</h2>
+        <p class="lead text-muted">{{PRICING_SUBTITLE}}</p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-4" data-aos="fade-up">
+        <div class="pricing-panel h-100 p-4 bg-white rounded-4 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 fw-bold mb-0">Starter</h3>
+            <span class="badge bg-light text-dark">Essencial</span>
+          </div>
+          <p class="text-muted">Perfeito para começar.</p>
+          <div class="display-5 fw-bold mb-2">
+            R$ 97 <small class="fs-6 text-muted">/mes</small>
+          </div>
+          <ul class="list-unstyled text-muted mb-4">
+            <li class="mb-2">1 Landing Page</li>
+            <li class="mb-2">Customizacao basica</li>
+            <li class="mb-2">Hospedagem incluida</li>
+            <li class="mb-2">Suporte via email</li>
+            <li class="mb-2">SSL gratis</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-primary w-100 py-3"
+            >Comecar agora</a
+          >
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div
+          class="pricing-panel featured h-100 p-4 rounded-4 shadow-lg position-relative overflow-hidden"
+        >
+          <span class="featured-tag">Mais vendido</span>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 fw-bold mb-0">Professional</h3>
+            <span class="badge bg-white text-primary">Recomendado</span>
+          </div>
+          <p class="text-light opacity-75">Mais recursos e poder.</p>
+          <div class="display-5 fw-bold text-white mb-2">
+            R$ 297 <small class="fs-6 text-light">/mes</small>
+          </div>
+          <ul class="list-unstyled text-light opacity-90 mb-4">
+            <li class="mb-2">5 Landing Pages</li>
+            <li class="mb-2">Customizacao avancada</li>
+            <li class="mb-2">Dominio personalizado</li>
+            <li class="mb-2">Suporte prioritario</li>
+            <li class="mb-2">Analytics integrado</li>
+            <li class="mb-2">A/B Testing</li>
+          </ul>
+          <a href="#contact" class="btn btn-light w-100 py-3">Escolher plano</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="240">
+        <div class="pricing-panel h-100 p-4 bg-white rounded-4 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 fw-bold mb-0">Enterprise</h3>
+            <span class="badge bg-light text-dark">Sob medida</span>
+          </div>
+          <p class="text-muted">Solucoes completas.</p>
+          <div class="display-5 fw-bold mb-2">
+            R$ 797 <small class="fs-6 text-muted">/mes</small>
+          </div>
+          <ul class="list-unstyled text-muted mb-4">
+            <li class="mb-2">Landing Pages ilimitadas</li>
+            <li class="mb-2">White Label completo</li>
+            <li class="mb-2">API de integracao</li>
+            <li class="mb-2">Suporte dedicado 24/7</li>
+            <li class="mb-2">Consultoria mensal</li>
+            <li class="mb-2">Recursos personalizados</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-primary w-100 py-3"
+            >Falar com vendas</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-alt {
+    background: #f6f8fb;
+  }
+  .pricing-panel {
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .pricing-panel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.08);
+  }
+  .pricing-panel.featured {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    color: #fff;
+    border: none;
+  }
+  .featured-tag {
+    position: absolute;
+    top: 12px;
+    right: -52px;
+    background: #fff;
+    color: var(--primary-color);
+    padding: 6px 48px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>

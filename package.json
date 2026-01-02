@@ -1,0 +1,24 @@
+{
+  "name": "landing-page-ssg-boilerplate",
+  "version": "1.0.0",
+  "description": "Static Site Generator boilerplate para Landing Pages White Label de alta performance",
+  "main": "builder.js",
+  "scripts": {
+    "build": "node builder.js",
+    "dev": "node builder.js && echo '✓ Build completo! Abra dist/index.html no navegador'",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "landing-page",
+    "static-site-generator",
+    "white-label",
+    "ssg",
+    "boilerplate",
+    "seo"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

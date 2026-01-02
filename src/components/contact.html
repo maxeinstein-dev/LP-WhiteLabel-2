@@ -1,0 +1,179 @@
+<!-- Contact Section -->
+<section class="contact-section py-5 bg-light" id="contact">
+  <div class="container py-5">
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="display-4 fw-bold mb-3" data-aos="fade-up">
+          {{CONTACT_TITLE}}
+        </h2>
+        <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
+          {{CONTACT_SUBTITLE}}
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+          <form id="contactForm" class="needs-validation" novalidate>
+            <div class="mb-4">
+              <label for="name" class="form-label fw-semibold"
+                >Nome Completo</label
+              >
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="name"
+                name="name"
+                placeholder="{{CONTACT_FORM_NAMEPLACEHOLDER}}"
+                required
+                aria-label="Nome completo"
+              />
+              <div class="invalid-feedback">
+                Por favor, insira seu nome completo.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="email" class="form-label fw-semibold">E-mail</label>
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                name="email"
+                placeholder="{{CONTACT_FORM_EMAILPLACEHOLDER}}"
+                required
+                aria-label="Endereço de e-mail"
+              />
+              <div class="invalid-feedback">
+                Por favor, insira um e-mail válido.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="phone" class="form-label fw-semibold">Telefone</label>
+              <input
+                type="tel"
+                class="form-control form-control-lg"
+                id="phone"
+                name="phone"
+                placeholder="{{CONTACT_FORM_PHONEPLACEHOLDER}}"
+                aria-label="Número de telefone"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label fw-semibold"
+                >Mensagem</label
+              >
+              <textarea
+                class="form-control form-control-lg"
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="{{CONTACT_FORM_MESSAGEPLACEHOLDER}}"
+                required
+                aria-label="Sua mensagem"
+              ></textarea>
+              <div class="invalid-feedback">
+                Por favor, escreva uma mensagem.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+              {{CONTACT_FORM_SUBMITBUTTON}}
+            </button>
+          </form>
+
+          <!-- Success/Error Messages -->
+          <div id="formMessage" class="mt-3 d-none"></div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="h-100">
+          <div class="mb-5">
+            <h3 class="h4 fw-bold mb-4">Informações de Contato</h3>
+
+            <div class="d-flex align-items-start mb-4">
+              <div class="contact-icon me-3">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">E-mail</h4>
+                <a
+                  href="mailto:{{CONTACT_INFO_EMAIL}}"
+                  class="text-decoration-none text-muted"
+                >
+                  {{CONTACT_INFO_EMAIL}}
+                </a>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start mb-4">
+              <div class="contact-icon me-3">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">Telefone</h4>
+                <a
+                  href="tel:{{CONTACT_INFO_PHONE}}"
+                  class="text-decoration-none text-muted"
+                >
+                  {{CONTACT_INFO_PHONE}}
+                </a>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start">
+              <div class="contact-icon me-3">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">Localização</h4>
+                <p class="text-muted mb-0">{{CONTACT_INFO_ADDRESS}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary bg-opacity-10 p-4 rounded-4">
+            <h4 class="h5 fw-bold mb-3">Horário de Atendimento</h4>
+            <p class="mb-2"><strong>Segunda a Sexta:</strong> 9h - 18h</p>
+            <p class="mb-0"><strong>Sábado:</strong> 9h - 13h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border-radius: 12px;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+  }
+
+  .contact-section a:hover {
+    color: var(--primary-color) !important;
+  }
+</style>
