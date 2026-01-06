@@ -134,7 +134,7 @@ async function build() {
 
     // 1. Carrega o data.json
     logStep("1/7", "Carregando data.json");
-    const dataPath = path.join(__dirname, "data.json");
+    const dataPath = path.join(__dirname, "data-construtor-a.json");
     const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
     logSuccess("data.json carregado com sucesso");
 
