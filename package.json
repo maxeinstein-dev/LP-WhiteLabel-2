@@ -2,10 +2,10 @@
   "name": "landing-page-ssg-boilerplate",
   "version": "1.0.0",
   "description": "Static Site Generator boilerplate para Landing Pages White Label de alta performance",
-  "main": "builder.js",
+  "main": "builder.php",
   "scripts": {
-    "build": "node builder.js",
-    "dev": "node builder.js && echo '✓ Build completo! Abra dist/index.html no navegador'",
+    "build": "php builder.php",
+    "dev": "php builder.php && echo '✓ Build completo! Abra dist/index.html no navegador'",
     "clean": "rm -rf dist"
   },
   "keywords": [

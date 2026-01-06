@@ -10,7 +10,7 @@ Sistema profissional de geração de landing pages estáticas de alta performanc
 - **🔍 SEO Otimizado**: Meta tags, Open Graph, estrutura semântica
 - **♿ Acessível**: Compatível com WCAG 2.1
 - **🚀 Deploy Automático**: CI/CD com GitHub Actions + FTP
-- **🛠️ Zero Dependências**: Usa apenas módulos nativos do Node.js
+- **🛠️ Zero Dependências**: Usa apenas PHP nativo (sem frameworks)
 
 ---
 
@@ -37,8 +37,7 @@ landing-page-ssg/
 │   └── images/              # Imagens do projeto
 ├── dist/                     # Pasta gerada (não versionar)
 ├── data.json                 # Arquivo de configuração
-├── builder.js                # Script de build
-├── package.json
+├── builder.php               # Script de build
 └── README.md
 ```
 
@@ -74,7 +73,7 @@ Edite o arquivo `data.json` com suas informações:
 ### 3. Execute o build
 
 ```bash
-npm run build
+php builder.php
 ```
 
 O HTML otimizado será gerado em `dist/index.html`.
@@ -95,18 +94,18 @@ npx serve dist
 
 No seu repositório GitHub, vá em **Settings → Secrets and variables → Actions** e adicione:
 
-| Secret | Descrição | Exemplo |
-|--------|-----------|---------|
-| `FTP_SERVER` | Endereço do servidor FTP | `ftp.seuservidor.com` |
-| `FTP_USERNAME` | Usuário FTP | `usuario@dominio.com` |
-| `FTP_PASSWORD` | Senha FTP | `sua-senha-segura` |
+| Secret         | Descrição                | Exemplo               |
+| -------------- | ------------------------ | --------------------- |
+| `FTP_SERVER`   | Endereço do servidor FTP | `ftp.seuservidor.com` |
+| `FTP_USERNAME` | Usuário FTP              | `usuario@dominio.com` |
+| `FTP_PASSWORD` | Senha FTP                | `sua-senha-segura`    |
 
 ### Passo 2: Ajuste o workflow (se necessário)
 
 Edite `.github/workflows/main.yml` para configurar o diretório de destino:
 
 ```yaml
-server-dir: ./public_html/  # Ajuste conforme seu servidor
+server-dir: ./public_html/ # Ajuste conforme seu servidor
 ```
 
 ### Passo 3: Faça push para main
@@ -118,8 +117,9 @@ git push origin main
 ```
 
 O GitHub Actions irá:
-1. ✅ Instalar Node.js
-2. 🔨 Executar o `builder.js`
+
+1. ✅ Instalar PHP
+2. 🔨 Executar o `builder.php`
 3. 🚀 Fazer deploy via FTP automaticamente
 
 ---
@@ -172,11 +172,11 @@ O builder irá montar a página na ordem especificada.
 
 ## 🔧 Scripts Disponíveis
 
-| Comando | Descrição |
-|---------|-----------|
-| `npm run build` | Gera a versão de produção em `/dist` |
-| `npm run dev` | Build + mensagem de sucesso |
-| `npm run clean` | Remove a pasta `/dist` |
+| Comando           | Descrição                            |
+| ----------------- | ------------------------------------ |
+| `php builder.php` | Gera a versão de produção em `/dist` |
+| `npm run build`   | Alias para `php builder.php`         |
+| `npm run dev`     | Build + mensagem de sucesso          |
 
 ---
 
@@ -195,12 +195,14 @@ Este boilerplate gera páginas otimizadas:
 ## 🛡️ SEO & Acessibilidade
 
 ### SEO
+
 - Meta tags completas
 - Open Graph para redes sociais
 - Estrutura semântica (header, main, footer)
 - URLs amigáveis
 
 ### Acessibilidade
+
 - ARIA labels
 - Contraste de cores adequado
 - Navegação por teclado
@@ -212,7 +214,7 @@ Este boilerplate gera páginas otimizadas:
 
 Este projeto **não possui dependências externas** no build. Usa apenas:
 
-- Node.js (módulos `fs` e `path`)
+- PHP 8.0+ (funções nativas)
 - Bootstrap 5 (via CDN)
 - Google Fonts (via CDN)
 
