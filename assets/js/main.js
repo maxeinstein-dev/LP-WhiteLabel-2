@@ -132,13 +132,22 @@
       rootMargin: "0px 0px -50px 0px",
     };
 
+    let elementsToAnimate = [];
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in");
-          observer.unobserve(entry.target);
-        }
-      });
+      elementsToAnimate = entries
+        .filter((e) => e.isIntersecting)
+        .map((e) => e.target);
+
+      // Batch updates with requestAnimationFrame to avoid layout thrashing
+      if (elementsToAnimate.length > 0) {
+        requestAnimationFrame(() => {
+          elementsToAnimate.forEach((el) => {
+            el.classList.add("fade-in");
+            observer.unobserve(el);
+          });
+        });
+      }
     }, observerOptions);
 
     animatedElements.forEach((el) => {
